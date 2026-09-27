@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>16 Hour Study Tracker | StudyLoop</title>
+    <meta
+      name="description"
+      content="Track your daily 16-hour study goal, subjects, tasks, DSA practice, projects, interview preparation and learning progress with StudyLoop."
+    />
+    <meta
+      name="keywords"
+      content="study tracker, 16 hour study plan, DSA tracker, interview preparation, study timer, productivity, streak tracker, MERN, system design"
+    />
+    <meta name="author" content="Naveen" />
+    <meta name="theme-color" content="#7C3AED" />
+    <link rel="canonical" href="https://studyloop.vercel.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="StudyLoop" />
+    <meta property="og:title" content="16 Hour Study Tracker | StudyLoop" />
+    <meta
+      property="og:description"
+      content="Track your daily 16-hour study goal, subjects, tasks, DSA practice, projects, interview preparation and learning progress with StudyLoop."
+    />
+    <meta property="og:url" content="https://studyloop.vercel.app/" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="16 Hour Study Tracker | StudyLoop" />
+    <meta
+      name="twitter:description"
+      content="16 Hours. Every Day. Keep Building. Offline-first study target tracker."
+    />
+
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- PRD §11.3 — zero flash-of-wrong-theme: runs before first paint -->
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem('sl_settings');
+          var pref = raw ? (JSON.parse(raw) || {}).theme : 'system';
+          if (pref !== 'light' && pref !== 'dark') {
+            pref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.dataset.theme = pref;
+          document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute('content', pref === 'dark' ? '#150E1F' : '#7C3AED');
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

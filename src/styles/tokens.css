@@ -1,0 +1,176 @@
+/* =========================================================================
+   StudyLoop — Design Tokens (PRD §11.1 / §11.2)
+   CSS custom properties are the ONLY source of colour in this app.
+   ========================================================================= */
+
+:root {
+  /* ---- Brand ---------------------------------------------------------- */
+  --primary: #7c3aed;
+  --primary-soft: #ede9fe;
+  --primary-strong: #6d28d9;
+  --secondary: #ec4899;
+  --secondary-soft: #fce7f3;
+  --accent: #f97316;
+  --accent-soft: #ffedd5;
+
+  /* ---- Surfaces ------------------------------------------------------- */
+  --bg: #fff7ed;
+  --bg-alt: #fffaf4;
+  --surface: #ffffff;
+  --surface-2: #fffcf8;
+  --surface-inset: #fdf6ef;
+
+  /* ---- Text ----------------------------------------------------------- */
+  --text: #292524;
+  --muted: #78716c;
+  --on-primary: #ffffff;
+
+  /* ---- Lines / status ------------------------------------------------- */
+  --border: #f0e6dc;
+  --border-strong: #e3d5c6;
+  --success: #16a34a;
+  --success-soft: #dcfce7;
+  --danger: #dc2626;
+  --danger-soft: #fee2e2;
+  --warning: #d97706;
+  --warning-soft: #fef3c7;
+  --info: #7c3aed;
+  --info-soft: #ede9fe;
+
+  /* ---- Gradients (progress bars, CTAs, glows, logo only) -------------- */
+  --grad-main: linear-gradient(135deg, #7c3aed, #ec4899);
+  --grad-warm: linear-gradient(135deg, #ec4899, #f97316);
+  --grad-full: linear-gradient(90deg, #7c3aed, #ec4899 55%, #f97316);
+
+  /* ---- Heatmap ramp (§9.5 / §11.1) ------------------------------------ */
+  --heat-0: #f6ece1;
+  --heat-1: #fbcfe8;
+  --heat-2: #f472b6;
+  --heat-3: #a855f7;
+  --heat-4: #7c3aed;
+  --heat-text-hi: #ffffff;
+
+  /* ---- Difficulty ----------------------------------------------------- */
+  --easy: #15803d;
+  --easy-soft: #dcfce7;
+  --medium: #b45309;
+  --medium-soft: #fef3c7;
+  --hard: #be123c;
+  --hard-soft: #ffe4e6;
+
+  /* ---- Shadows (violet-tinted, never harsh black) --------------------- */
+  --shadow-1: 0 1px 2px rgba(76, 29, 149, 0.06), 0 1px 3px rgba(76, 29, 149, 0.05);
+  --shadow-2: 0 4px 12px rgba(76, 29, 149, 0.08), 0 2px 4px rgba(76, 29, 149, 0.04);
+  --shadow-3: 0 16px 40px rgba(76, 29, 149, 0.14), 0 4px 12px rgba(76, 29, 149, 0.06);
+  --ring: 0 0 0 3px rgba(124, 58, 237, 0.35);
+
+  /* ---- Typography ----------------------------------------------------- */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, 'Cascadia Mono', Menlo,
+    Consolas, 'Liberation Mono', monospace;
+
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-30: 1.875rem;
+  --fs-36: 2.25rem;
+  --fs-48: 3rem;
+  --fs-hero: clamp(2rem, 1.2rem + 3.6vw, 3.5rem);
+  --fs-timer: clamp(2.75rem, 1rem + 11vw, 6rem);
+
+  /* ---- Spacing -------------------------------------------------------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+
+  /* ---- Shape ---------------------------------------------------------- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-full: 9999px;
+
+  /* ---- Motion --------------------------------------------------------- */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --t-fast: 150ms;
+  --t-base: 250ms;
+  --t-slow: 400ms;
+
+  /* ---- Layout --------------------------------------------------------- */
+  --sidebar-w: 260px;
+  --sidebar-rail-w: 76px;
+  --navbar-h: 64px;
+  --bottomnav-h: 64px;
+  --content-max: 1600px;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-t: env(safe-area-inset-top, 0px);
+
+  color-scheme: light;
+}
+
+/* =========================================================================
+   Dark theme — deep violet. Never black + blue.
+   ========================================================================= */
+[data-theme='dark'] {
+  --primary: #a78bfa;
+  --primary-soft: #2e1f47;
+  --primary-strong: #c4b5fd;
+  --secondary: #f472b6;
+  --secondary-soft: #3d1f33;
+  --accent: #fb923c;
+  --accent-soft: #3d2718;
+
+  --bg: #150e1f;
+  --bg-alt: #1a1128;
+  --surface: #211533;
+  --surface-2: #281a3d;
+  --surface-inset: #1b1129;
+
+  --text: #f3eef9;
+  --muted: #a79db8;
+  --on-primary: #1b1028;
+
+  --border: #322347;
+  --border-strong: #43305e;
+  --success: #4ade80;
+  --success-soft: #16301f;
+  --danger: #fb7185;
+  --danger-soft: #3b1720;
+  --warning: #fbbf24;
+  --warning-soft: #3a2a10;
+  --info: #a78bfa;
+  --info-soft: #2e1f47;
+
+  --grad-main: linear-gradient(135deg, #8b5cf6, #ec4899);
+  --grad-warm: linear-gradient(135deg, #ec4899, #fb923c);
+  --grad-full: linear-gradient(90deg, #8b5cf6, #ec4899 55%, #fb923c);
+
+  --heat-0: #241733;
+  --heat-1: #45264d;
+  --heat-2: #6d2f67;
+  --heat-3: #8b45c9;
+  --heat-4: #a78bfa;
+  --heat-text-hi: #1b1028;
+
+  --easy: #4ade80;
+  --easy-soft: #16301f;
+  --medium: #fbbf24;
+  --medium-soft: #3a2a10;
+  --hard: #fb7185;
+  --hard-soft: #3b1720;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-3: 0 18px 44px rgba(0, 0, 0, 0.55);
+  --ring: 0 0 0 3px rgba(167, 139, 250, 0.45);
+
+  color-scheme: dark;
+}
